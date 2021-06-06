@@ -1,4 +1,4 @@
-# vscode-devcontainer-raspberrypi-pico [![Create docker image](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/blank.yml/badge.svg?event=registry_package)](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/blank.yml)
+# vscode-devcontainer-raspberrypi-pico [![Create docker image](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/blank.yml/badge.svg)](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/blank.yml)
 VSCode Dev Container for the Raspberry PI Pico C SDK
 
 ## Usage
