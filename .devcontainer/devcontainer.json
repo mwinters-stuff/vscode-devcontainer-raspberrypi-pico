@@ -22,7 +22,8 @@
 		"marus25.cortex-debug",
 		"ms-vscode.cmake-tools",
 		"twxs.cmake",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+    "xaver.clang-format"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
