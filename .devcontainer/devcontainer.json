@@ -23,7 +23,8 @@
 		"ms-vscode.cmake-tools",
 		"twxs.cmake",
 		"eamodio.gitlens",
-    "xaver.clang-format"
+		"xaver.clang-format",
+		"chris-hock.pioasm"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
