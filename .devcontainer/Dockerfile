@@ -6,13 +6,13 @@ FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends cmake build-essential wget \
+    && apt-get -y install --no-install-recommends cmake build-essential wget ca-certificates \
     gdb-multiarch automake autoconf libtool libftdi-dev libusb-1.0-0-dev pkg-config clang-format
 WORKDIR /apps
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 && \
-    tar xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 
-RUN mv gcc-arm-none-eabi-10-2020-q4-major gcc-arm-none && \
-    rm gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 && \
+    tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 
+RUN mv gcc-arm-none-eabi-10.3-2021.10 gcc-arm-none && \
+    rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 
 ENV PATH=$PATH:/apps/gcc-arm-none/bin
 RUN git clone -b master https://github.com/raspberrypi/pico-sdk.git --depth=1 && cd pico-sdk && git submodule update --init 
 ENV PICO_SDK_PATH=/apps/pico-sdk
