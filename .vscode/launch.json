@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Cortex Debug",
+      "name": "Cortex Debug - PICOPROBE",
       "cwd": "${workspaceRoot}",
       "executable": "${command:cmake.launchTargetPath}",
       "request": "launch",
@@ -16,14 +16,25 @@
       "configFiles": [
         "interface/picoprobe.cfg",
         "target/rp2040.cfg"
-        ],
+      ],
       "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
-      "runToMain": true,
-      // Give restart the same functionality as runToMain
-      "postRestartCommands": [
-          "break main",
-          "continue"
-      ]
+      "runToEntryPoint": "main",
+    },
+    {
+      "name": "Cortex Debug CMSIS-DAP",
+      "cwd": "${workspaceRoot}",
+      "executable": "${command:cmake.launchTargetPath}",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "gdbPath": "gdb-multiarch",
+      "device": "RP2040",
+      "configFiles": [
+        "interface/cmsis-dap.cfg",
+        "target/rp2040.cfg"
+      ],
+      "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
+      "runToEntryPoint": "main",
     }
   ]
 }

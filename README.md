@@ -1,5 +1,4 @@
-# vscode-devcontainer-raspberrypi-pico [![Create docker image](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/build-image.yml/badge.svg)](https://github.com/mwinters-stuff/vscode-devcontainer-raspberrypi-pico/actions/workflows/build-image.yml)
-VSCode Dev Container for the Raspberry PI Pico C SDK
+# vscode-devcontainer-raspberrypi-pico 
 
 ## Usage
 
@@ -15,7 +14,7 @@ Open the folder, and allow the container to build.
 
 ## This container includes
 * pico-sdk
-* openocd - compiled for picoprobe
+* openocd - compiled for picoprobe and cmsis-dap
 * picotool
 * bootterm (for serial monitoring) - see https://github.com/wtarreau/bootterm
 
