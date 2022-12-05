@@ -10,13 +10,15 @@ Copy the file https://github.com/raspberrypi/openocd/blob/rp2040/contrib/60-open
 Open the folder, and allow the container to build.
 
 ## To know
+* Configured to use cmsis-dap for picoprobe
 * SDK is installed in /pico-sdk
 * All USB devices are exported to container - so the picoprobe can be found and used.
 * USB Device /dev/ttyACM0 is exported to container for monitoring
 
-## To try cmsis-dap for picoprobe
-Change the repository for OpenOCD in the Dockerfile, comment out the line that clones from raspberry pi
-and comment in the line that clones from openocd
+## Change to picoprobe
+Change the repository for OpenOCD in the Dockerfile, comment out the line that clones from openocd
+and comment in the line that clones raspberry pi. Then change the launch.json to comment in the correct
+launch command.
 
 ## This container includes
 * pico-sdk
