@@ -24,8 +24,16 @@ RUN mv gcc-arm-none-eabi-10.3-2021.10 gcc-arm-none && \
     ln -s /apps/gcc-arm-none/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc && \
     rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 
 ENV PATH=$PATH:/apps/gcc-arm-none/bin
-RUN git clone -b master https://github.com/raspberrypi/pico-sdk.git --depth=1 && cd pico-sdk && git submodule update --init 
+RUN cd /apps && \
+    git clone -b master https://github.com/raspberrypi/pico-sdk.git --depth=1 && \
+    cd pico-sdk && \
+    git submodule update --init
 ENV PICO_SDK_PATH=/apps/pico-sdk
+RUN cd /apps && \
+    git clone -b master https://github.com/raspberrypi/pico-extras.git --depth=1 \
+    && cd pico-extras && \
+    git submodule update --init 
+ENV PICO_EXTRAS_PATH=/apps/pico-extras
 RUN git clone https://github.com/raspberrypi/openocd.git -b picoprobe --depth=1 && \
     cd openocd && ./bootstrap && ./configure --enable-ftdi --enable-sysfsgpio --enable-picoprobe && make -j 8 install && \
     cd /apps && git clone https://github.com/raspberrypi/picotool.git --depth=1 && \
