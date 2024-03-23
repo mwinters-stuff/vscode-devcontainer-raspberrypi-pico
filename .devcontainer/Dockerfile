@@ -16,7 +16,9 @@ RUN apt-get update && \
         libftdi-dev \
         libusb-1.0-0-dev \
         pkg-config \
-        clang-format
+        clang-format \
+        python3 \
+        python3-tk
 WORKDIR /apps
 RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 && \ 
     tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 
@@ -34,6 +36,9 @@ RUN cd /apps && \
     && cd pico-extras && \
     git submodule update --init 
 ENV PICO_EXTRAS_PATH=/apps/pico-extras
+RUN cd /apps && \
+    git clone https://github.com/raspberrypi/pico-project-generator.git
+ENV PATH=$PATH:/apps/pico-project-generator
 RUN git clone https://github.com/raspberrypi/openocd.git -b picoprobe --depth=1 && \
     cd openocd && ./bootstrap && ./configure --enable-ftdi --enable-sysfsgpio --enable-picoprobe && make -j 8 install && \
     cd /apps && git clone https://github.com/raspberrypi/picotool.git --depth=1 && \
