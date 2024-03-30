@@ -39,6 +39,9 @@ ENV PICO_EXTRAS_PATH=/apps/pico-extras
 RUN cd /apps && \
     git clone https://github.com/raspberrypi/pico-project-generator.git
 ENV PATH=$PATH:/apps/pico-project-generator
+RUN cd /apps && \
+    git clone https://github.com/codaris/picovga-cmake.git pico-vga
+ENV PICOVGA_PATH=/apps/pico-vga
 RUN git clone https://github.com/raspberrypi/openocd.git -b picoprobe --depth=1 && \
     cd openocd && ./bootstrap && ./configure --enable-ftdi --enable-sysfsgpio --enable-picoprobe && make -j 8 install && \
     cd /apps && git clone https://github.com/raspberrypi/picotool.git --depth=1 && \
