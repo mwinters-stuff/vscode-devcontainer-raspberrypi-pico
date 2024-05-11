@@ -8,6 +8,8 @@
 * pico-extras
 * pico-project-generator
 * pico-vga
+* arduino-pico
+* arduino-core
 * openocd - compiled for picoprobe
 * picotool
 * bootterm (for serial monitoring) - see https://github.com/wtarreau/bootterm
@@ -46,6 +48,8 @@
 * PICO_SDK_PATH=/apps/pico-sdk
 * PICO_EXTRAS_PATH=/apps/pico-extras
 * PICOVGA_PATH=/apps/pico-vga
+* ARDUINO_PICO_PATH=/apps/arduino-pico
+* ARDUINO_CORE_PATH=/apps/arduino-core
 
 ## To know
 
@@ -53,5 +57,7 @@
 * EXTRAS is installed in /apps/pico-extras
 * PICO-PROJECT-GENERATOR is installed in /apps/pico-project-generator
 * PICO-VGA is installed in /apps/pico-vga
+* ARDUINO-CORE is installed in /apps/arduino-core
+* ARDUINO-PICO is installed in /apps/arduino-pico
 * All USB devices are exported to container - so the picoprobe can be found and used.
 * USB Device /dev/ttyACM0 is exported to container for monitoring
