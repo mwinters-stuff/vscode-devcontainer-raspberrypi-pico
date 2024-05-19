@@ -11,6 +11,7 @@
 * arduino-pico
 * arduino-core
 * openocd - compiled for picoprobe
+* arduino libraries
 * picotool
 * bootterm (for serial monitoring) - see https://github.com/wtarreau/bootterm
 
@@ -22,26 +23,30 @@
 * Copy the contents of .devcontainer into your project
 * Copy the contents of .vscode into your project
 * Remove any existing "build" directory.
-* Open the folder and allow the container to build.
+* Open the folder in VSCode and allow the container to build.
 
 **For a new project**
 
-* Open the folder where you want to create the project in the dev container.
+* Create the folder where you want to create the project.
+* Copy the contents of .devcontainer into your project
+* Copy the contents of .vscode into your project
+* Open the folder in VSCode.  When prompted reopen the folder in the container.
 * Open a terminal in the dev container and execute the command "pico_project.py --gui".
-* Configure the project but do not select Create VSCode project under the IDE options.  
+* Change the project name to the name of your folder.  Change the location to "/workspaces".
+* Configure the rest of the project as desired but do not select Create VSCode project under the IDE options.  
 * Click OK to generate the code.
 * Click Quit to exit the code generator.
-* Copy the .devcontainer folder from the dev container repository to the project folder.
-* Copy the .vscode folder from the dev container repository to the project folder.
-* In VSCode, select File > Open Folder and select the project folder.  
-* Click OK and open the project in the dev container.
 
-**Confirm you can build and debug the project**
+**Build and debug the project**
 
-* In VSCode, open the Settings menu (\<CTRL\>\<SHIFT\>P) and choose CMake: Select a Kit.  
-* Chose the arm-none-eabi compiler.
-* Build the executable as normal.
-* You can now debug the executable using the Run and Debug extension.
+* In the left hand pane, select the Run and Debug icon
+* In VSCode, press <CTRL><SHIFT>P and select the command CMake: Select a Kit
+* Select the GCC 10.3.1 arm-none-eabi compiler.
+* In VSCode, press <CTRL><SHIFT>P and select the command CMake: Select a Variant
+* Select the Debug variant
+* At the top of the screen in the Run and Debug dropdown select Cortext Debug
+* Click the green arrow.  If prompted to select a launch target select your project.
+* The project will build and run in the debugger.
 
 ## Environment Variables
 
@@ -57,7 +62,7 @@
 * EXTRAS is installed in /apps/pico-extras
 * PICO-PROJECT-GENERATOR is installed in /apps/pico-project-generator
 * PICO-VGA is installed in /apps/pico-vga
-* ARDUINO-CORE is installed in /apps/arduino-core
-* ARDUINO-PICO is installed in /apps/arduino-pico
+* Arduino pico libraries are available in /apps/arduino-pico
+* Arduino core libraries are available in /apps/arduino-core
 * All USB devices are exported to container - so the picoprobe can be found and used.
 * USB Device /dev/ttyACM0 is exported to container for monitoring
