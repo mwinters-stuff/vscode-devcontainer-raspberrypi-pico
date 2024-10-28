@@ -20,16 +20,17 @@
 **For an existing project**
 
 * Clone or download the repository
-* Copy the contents of .devcontainer into your project
-* Copy the contents of .vscode into your project
+* Copy .devcontainer and it's contents into your project
+* Copy .vscode and it's contents into your project
 * Remove any existing "build" directory.
 * Open the folder in VSCode and allow the container to build.
 
 **For a new project**
 
+You can use the whole project and modify as required OR
 * Create the folder where you want to create the project.
-* Copy the contents of .devcontainer into your project
-* Copy the contents of .vscode into your project
+* Copy .devcontainer and it's contents into your project
+* Copy .vscode and it's contents into your project
 * Open the folder in VSCode.  When prompted reopen the folder in the container.
 * Open a terminal in the dev container and execute the command "pico_project.py --gui".
 * Change the project name to the name of your folder.  Change the location to "/workspaces".
