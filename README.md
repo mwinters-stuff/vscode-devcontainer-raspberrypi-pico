@@ -32,7 +32,8 @@ You can use the whole project and modify as required OR
 * Copy .devcontainer and it's contents into your project
 * Copy .vscode and it's contents into your project
 * Open the folder in VSCode.  When prompted reopen the folder in the container.
-* Open a terminal in the dev container and execute the command "pico_project.py --gui".
+* Open a terminal locally (not in vscode) and run the command `xhost +SI:localuser:$(id -un)`
+* Open a terminal in the dev container and execute the command "pico_project.py --gui". The gui will now appear on your desktop.
 * Change the project name to the name of your folder.  Change the location to "/workspaces".
 * Configure the rest of the project as desired but do not select Create VSCode project under the IDE options.  
 * Click OK to generate the code.

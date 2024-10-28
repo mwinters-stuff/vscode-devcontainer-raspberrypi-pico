@@ -9,8 +9,16 @@
         "--cap-add=SYS_PTRACE",
         "--security-opt",
         "seccomp=unconfined",
+        "--privileged",
+        "-v", "/dev/bus/usb:/dev/bus/usb",
         "--device=/dev/bus/usb",
-        "--device=/dev/ttyACM0"
+        "--device=/dev/ttyACM0",
+        // These lines below are for sharing the X11 display for the 
+        // pico_project.py application. disable if need be.
+        "-e", "DISPLAY=${localEnv:DISPLAY}",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw" ,
+        "--ipc=host" ,
+        "--user=${localEnv:UID}:${localEnv:GROUPS}"
     ],
     // Set *default* container specific settings.json values on container create.
     "customizations": {
