@@ -38,6 +38,11 @@
         ],
       "svdFile": "${env:PICO_SDK_PATH}/src/rp2040/hardware_regs/rp2040.svd",
       "runToEntryPoint": "main",
-    }    
+      // Give restart the same functionality as runToMain
+      "postRestartCommands": [
+          "break main",
+          "continue"
+      ]
+    }
   ]
 }
