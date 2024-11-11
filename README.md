@@ -39,7 +39,8 @@
 
 **Build and debug the project**
 
-* In the left hand pane, select the Run and Debug icon
+* In the VSCode project Explorer pane, delete the project's build folder.
+* In the VSCode left hand pane, select the Run and Debug icon
 * In VSCode, press <CTRL><SHIFT>P and select the command CMake: Select a Kit
 * Select the GCC 10.3.1 arm-none-eabi compiler.
 * In VSCode, press <CTRL><SHIFT>P and select the command CMake: Select a Variant
